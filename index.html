@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <meta charset="UTF-8" />
 <link rel="shortcut icon" href="favicon.ico">
+<link href="./src/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script type="text/javascript" src="speedtest.js"></script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
@@ -276,20 +277,52 @@ function initUI(){
 			font-size:0.8em;
 		}
 	}
+	.bg-glass {
+      background-color: rgba(223, 223, 223, 255) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+    .bg-class1 {
+      color: rgba(96, 96, 255, 255);
+    }
+	.btn-outline-primary {
+		color: rgba(96, 96, 255, 255) !important;
+		border-color: rgba(96, 96, 255, 255) !important
+	}
+	.btn-outline-primary:hover {
+    	color: rgba(223, 223, 223, 255) !important;
+    	background-color: rgba(96, 96, 255, 255) !important;
+}
 </style>
-<title>LibreSpeed Example</title>
+<title>LibreSpeedTest</title>
 </head>
 <body>
-<h1>LibreSpeed Example</h1>
-<div id="testWrapper">
-	<form>
-		<div class="form-group">
-			<label for="lname">Nume locatie:</label>
-			<input class="form-control" type="text" id="lname" name="lname"><br><br>
-			<label for="pname">Provider:</label>
-			<input class="form-control" type="text" id="pname" name="pname"><br><br>
+<h1>LibreSpeedTest</h1>
+
+	<div class="container py-3 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+		  <div class="col-12 col-md-8 col-lg-6 col-xl-5 card bg-glass">
+			<div class="input-group flex-nowrap mb-2m-2">
+			  <div class="col-md-6 mb-2">
+				<div class="form-outline">
+				  <label class="form-label bg-class1 float-start" for="lname">Locatia</label>
+				  <input type="text" id="lname" class="form-control" />
+				  <div id="emailHelp" class="form-text float-start">Exemplu: Apia Aiud</div>
+				</div>
+			  </div>
+			  <div class="col-md-6 mb-2 ms-2">
+				<div class="form-outline">
+				  <label class="form-label bg-class1 float-start" for="pname">Provider</label>
+				  <input type="text" id="pname" class="form-control" />
+				  <div id="emailHelp" class="form-text float-start">RDS, VDF, TLK, ORNG</div>
+				</div>
+			  </div>
+			</div>
+			<div class="mb-2"> <a href="./results/search.php" class="float-start" target="_blank"><button class="btn btn-outline-primary">Cauta inregistrari speedtest</button></a></div>
+		  </div>
 		</div>
-	</form>
+	  </div>
+
+	<div id="testWrapper">
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
 	<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>
 	<div id="test">
@@ -329,7 +362,7 @@ function initUI(){
 			<img src="" id="resultsImg" />
 		</div>
 	</div>
-	<a href="https://github.com/librespeed/speedtest">Source code</a>
+	<!-- <a href="https://github.com/librespeed/speedtest">Source code</a> -->
 </div>
 <div id="privacyPolicy" style="display:none">
     <h2>Privacy Policy</h2>
